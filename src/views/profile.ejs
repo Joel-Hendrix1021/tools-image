@@ -1,0 +1,38 @@
+<%- include ('template/head') %>
+    <%- include ('template/navbar') %>
+
+        <div class="container ">
+            <h1 class="text-center">Profile</h1>
+            <div class="row align-items-start">
+                <div class="col m-4">
+                    <img class="img" style="width:400px" src="<%= image.path %> ">
+                    <p>
+                        <%= image.title %>
+                    </p>
+                    <p>
+                        <%= image.description %>
+                    </p>
+                    <p>
+                        <%= timeFormat(image.date) %>
+                    </p>
+                    <a class="btn btn-danger" href="delete/<%=image._id%> ">delete</a>
+                </div>
+                <div class="col m-4">
+                    <form action="/update/<%=image._id %> " method="POST">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">title</label>
+                            <input type="text" class="form-control" value="<%=image.title %> " name="title" >
+                           
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">description</label>
+                            <input type="text" value="<%=image.description %> " class="form-control" name="description" >
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include ('template/footer') %>
+            <%- include ('template/footer') %>

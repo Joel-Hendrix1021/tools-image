@@ -1,0 +1,18 @@
+<%- include ('template/head') %>
+   <%- include ('template/navbar') %> 
+   
+    <div class="container ">
+        <h1 class="text-center">Tools-Images</h1>
+        <div class="row align-items-start">
+            <% images.forEach(el=> { %>
+                <div class="col mt-4">
+                    <img class="img " src="<%= el.path %> ">
+                    <p><%= el.title %></p>
+                    <p><%= el.description %></p>
+                    <p><%= timeFormat(el.date) %></p>
+                    <a class="btn btn-primary" href="profile/<%=el._id%> ">profile</a>
+                </div>
+            <% }) %>
+       </div>
+    </div>
+<%- include ('template/footer') %>
